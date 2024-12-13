@@ -12,6 +12,18 @@ $(document).keydown(function() {
     }
 });
 
+$(document).click(function() {
+    if(!started) {
+        $("#level-title").text("level " + level);
+        nextSequence();
+        started = true;
+    }
+});
+
+$("#reset").click(function() {
+    location.reload();
+});
+
 $(".btn").click(function() {
     var userChosenColour = $(this).attr("id");
     userClickedPattern.push(userChosenColour);
